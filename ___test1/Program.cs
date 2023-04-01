@@ -6,7 +6,7 @@
     {
         public static bool CanMake33(int x, int y)
         {
-            return (x == 33 || y == 33 || x+y == 33 || x-y == 33);
+            return (x == 33 || y == 33 || x + y == 33 || x - y == 33);
         }
 
         public static void Main(string[] args)

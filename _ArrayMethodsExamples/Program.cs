@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-class ArrayMethodsExamples
+﻿class ArrayMethodsExamples
 {
     static void Main()
     {

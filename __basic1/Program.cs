@@ -1,35 +1,32 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace __basic1
 {
     class Program
     {
-                class MathOperations
+        class MathOperations
         {
-           public  int AddNumbers(int intA, int intB)
+            public int AddNumbers(int intA, int intB)
             {
                 int Addition = intA + intB;
                 return Addition;
             }
-            public int AddNumbers1(int intA, int intB) => intA*2 + intB;
+            public int AddNumbers1(int intA, int intB) => intA * 2 + intB;
         }
 
-            class Item
-            {
-                public int Id { get; set; }
-                public string Name { get; set; }
-                public double Weight { get; set; }
+        class Item
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public double Weight { get; set; }
 
-                public Item(int id, string name, double weight)
-                {
-                    Id = id;
-                    Name = name;
-                    Weight = weight;
-                }
+            public Item(int id, string name, double weight)
+            {
+                Id = id;
+                Name = name;
+                Weight = weight;
             }
+        }
 
         static void Main()
         {
@@ -56,33 +53,33 @@ namespace __basic1
             Console.WriteLine(IsSudokuSolutionValid(board) ? "Valid" : "Invalid");
 
 
-        static bool IsSudokuSolutionValid(int[,] board)
-        {
-            return Enumerable.Range(0, 9).All(i => IsValidRow(board, i) && IsValidColumn(board, i)) && ValidateSubGrids(board);
-        }
+            static bool IsSudokuSolutionValid(int[,] board)
+            {
+                return Enumerable.Range(0, 9).All(i => IsValidRow(board, i) && IsValidColumn(board, i)) && ValidateSubGrids(board);
+            }
 
-        static bool IsValidRow(int[,] board, int rowIndex)
-        {
-            return Enumerable.Range(1, 9).All(n => Enumerable.Range(0, 9).Count(j => board[rowIndex, j] == n) == 1);
-        }
+            static bool IsValidRow(int[,] board, int rowIndex)
+            {
+                return Enumerable.Range(1, 9).All(n => Enumerable.Range(0, 9).Count(j => board[rowIndex, j] == n) == 1);
+            }
 
-        static bool IsValidColumn(int[,] board, int columnIndex)
-        {
-            return Enumerable.Range(1, 9).All(n => Enumerable.Range(0, 9).Count(j => board[j, columnIndex] == n) == 1);
-        }
+            static bool IsValidColumn(int[,] board, int columnIndex)
+            {
+                return Enumerable.Range(1, 9).All(n => Enumerable.Range(0, 9).Count(j => board[j, columnIndex] == n) == 1);
+            }
 
-        static bool ValidateSubGrids(int[,] board)
-        {
-            return Enumerable.Range(0, 3).All(x => Enumerable.Range(0, 3).All(y => IsValidSubGrid(board, x * 3, y * 3)));
-        }
+            static bool ValidateSubGrids(int[,] board)
+            {
+                return Enumerable.Range(0, 3).All(x => Enumerable.Range(0, 3).All(y => IsValidSubGrid(board, x * 3, y * 3)));
+            }
 
-        static bool IsValidSubGrid(int[,] board, int startX, int startY)
-        {
-            return Enumerable.Range(1, 9).All(n => Enumerable.Range(0, 3).Count(x => Enumerable.Range(0, 3).Count(y => board[startX + x, startY + y] == n) == 1) == 1);
-        }
+            static bool IsValidSubGrid(int[,] board, int startX, int startY)
+            {
+                return Enumerable.Range(1, 9).All(n => Enumerable.Range(0, 3).Count(x => Enumerable.Range(0, 3).Count(y => board[startX + x, startY + y] == n) == 1) == 1);
+            }
 
 
-        int[] values = { 1, 2, 3, 4, 5 };
+            int[] values = { 1, 2, 3, 4, 5 };
             bool all = values.All(v => v > 0); // Check if all values are greater than 0
             bool any = values.Any(v => v > 3); // Check if any value is greater than 3
             bool contains = values.Contains(2); // Check if values contains 2
@@ -116,7 +113,8 @@ namespace __basic1
                 _ => throw new ArgumentException("Invalid input")
             };
 
-            Array.ForEach(data, (value) => {
+            Array.ForEach(data, (value) =>
+            {
                 Console.WriteLine($"Data point: {value}");
                 if (value >= 3000)
                 {
@@ -162,7 +160,7 @@ namespace __basic1
                 return Tuple.Create(maxIndex, maxWeightKey);
             };
             Tuple<int, string> result1 = getMaxWeightItem(numbers3, weights);
-//
+            //
 
             List<Dictionary<string, int>> listOfDictionaries = new List<Dictionary<string, int>>
         {
@@ -190,7 +188,7 @@ namespace __basic1
             Converter<int, string> intToString = num => $"Number {num}";
             List<string> numberStrings = numbers2.ConvertAll(intToString);
 
-            List<string> names = new List<string> {"Zuck", "Yellow", "Alice", "Charlie", "Bob" };
+            List<string> names = new List<string> { "Zuck", "Yellow", "Alice", "Charlie", "Bob" };
             Comparison<string> compareLength = (str1, str2) => str1.Length.CompareTo(str2.Length);  //Comparison<string> is a delegate and this is how it is defined.
             names.Sort(compareLength);
             names.ForEach(Console.WriteLine);
@@ -216,8 +214,8 @@ namespace __basic1
             //    Console.WriteLine($"{entry.Key}: {entry.Value}");
             //}
             Action<string, int> printDetails = (name, age) => Console.WriteLine($"Name: {name}, Age: {age}");
-            printDetails("Charlie",ages["Charlie"]);
-            
+            printDetails("Charlie", ages["Charlie"]);
+
 
 
 
