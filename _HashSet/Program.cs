@@ -67,7 +67,7 @@
             union.UnionWith(hashSet5);
             Console.WriteLine("The union of the two HashSets contains {0} items:", union.Count);
 
-            // 15. Symmetrically excepting two HashSets and storing the result in a new HashSet
+            // 15. Symmetrically excepting two HashSets and storing the result in a new HashSet - elements that are present in either the current HashSet or the specified collection, but not both
             HashSet<int> symmetricExcept = new HashSet<int>(hashSet4);
             symmetricExcept.SymmetricExceptWith(hashSet5);
             Console.WriteLine("The symmetric except of the two HashSets contains {0} items:", symmetricExcept.Count);
