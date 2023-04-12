@@ -12,6 +12,7 @@
             hashSet.Add("banana");
             hashSet.Add("cherry");
             hashSet.Add("date");
+            hashSet.Add("date");
 
             // 3. Displaying the count of items in the HashSet
             Console.WriteLine("The HashSet contains {0} items:", hashSet.Count);
@@ -73,8 +74,8 @@
             Console.WriteLine("The symmetric except of the two HashSets contains {0} items:", symmetricExcept.Count);
 
             // 16. Copying the items of a HashSet to an array
-            string[] array = new string[hashSet.Count];
-            hashSet.CopyTo(array);
+            int[] array = new int[hashSet4.Count];
+            hashSet4.CopyTo(array);
 
             // 17. Checking if a HashSet is a proper subset of another HashSet
             HashSet<int> hashSet6 = new HashSet<int> { 1, 2, 3 };
